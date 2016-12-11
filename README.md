@@ -18,11 +18,11 @@ When the user clicks “login” in an application, the app should redirect the 
 | Method  | API Call | Notes | 
 | ------------- | ------------- | ------------- |
 | Get all names | GET /names | - | 
-| Register name | POST /names | - | 
+| Register name | POST /names | Payload: {"name": NAME} | 
 | Get name info | GET /names/{name} | - | 
 | Get name history | GET /names/{name}/history | - | 
 | Get historical zone file | GET /names/{name}/zoneFile/{zoneFileHash}  | - | 
-| Delete user | DELETE /names/{name} | - | 
+| Delete user | DELETE /names/{name} | Payload: {"name": NAME} | 
 | Transfer name | PATCH /names/{name} | Payload: {"owner": OWNER } | 
 | Set zone file | PATCH /names/{name} | Payload: {"zoneFile": ZONE_FILE } | 
 | Set zone file hash | PATCH /names/{name} | Payload: {"zoneFileHash": ZONE_FILE_HASH } | 
@@ -63,7 +63,7 @@ When the user clicks “login” in an application, the app should redirect the 
 | Create user | POST /users | - | 
 | Get user | GET /users/{userID} | - | 
 | Delete user | DELETE /users/{userID} | - | 
-| Update profile | PATCH /users/{userID} | Payload: {"profile": PROFILE } | 
+| Set profile | PUT /users/{userID} | Payload: {"profile": PROFILE } | 
 
 ### User Stores
 
